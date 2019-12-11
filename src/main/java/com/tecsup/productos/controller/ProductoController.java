@@ -51,9 +51,6 @@ public class ProductoController {
 	    Producto update(@RequestBody Producto producto, @PathVariable(value = "id") Integer id) {
 	        Producto currentProducto = this.iProductoService.findById(id);
 	        currentProducto.setNombreProducto(producto.getNombreProducto());
-	        currentProducto.setCategoriaProducto(producto.getCategoriaProducto());
-	        currentProducto.setPrecioProducto(producto.getPrecioProducto());
-	        currentProducto.setStockProducto(producto.getStockProducto());
 	        this.iProductoService.save(currentProducto);
 	        return currentProducto;
 	    }
